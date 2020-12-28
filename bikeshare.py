@@ -1,7 +1,7 @@
 import time
 import pandas as pd
 import numpy as np
-
+from tabulate import tabulate
 
 
 CITY_DATA = { 'chicago': 'chicago.csv',
@@ -209,10 +209,10 @@ def raw_data(df):
         x=5
 
         if order!= 'r':
-            print(df.head(5))
+            print(tabulate(df.head(5), headers ="keys"))
             request=input('Would you like to see the next 5 rows (yes/no):').lower()
             while request != 'no':
-                print(df.iloc[x:x+5])
+                print(tabulate(df.iloc[np.arange(x,x+5)], headers ="keys"))
                 request=input('Would you like to see the next 5 rows (yes/no):').lower()
                 x+=5
         else:
@@ -220,7 +220,7 @@ def raw_data(df):
             request=input('Would you like to see the next 5 rows (yes/no):').lower()
             reversed_df = df.iloc[::-1]
             while request != 'no':
-                print(reversed_df.iloc[x:x+5])
+                print(tabulate(reversed_df.iloc[np.arange(x,x+5)], headers ="keys"))
                 request=input('Would you like to see the next 5 rows (yes/no):').lower()
                 x+=5
 
