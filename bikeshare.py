@@ -1,7 +1,7 @@
 import time
 import pandas as pd
 import numpy as np
-
+from tabulate import tabulate
 
 
 CITY_DATA = { 'chicago': 'chicago.csv',
@@ -207,12 +207,12 @@ def raw_data(df):
         df = df.sort_values(by=['Start Time'])
         df['Trip Duration (in minutes)'] = round(df['Trip Duration']/60,2)
         x=5
-
+        
         if order!= 'r':
-            print(df.head(5))
+            print(tabulate(df.head(5), headers ="keys"))
             request=input('Would you like to see the next 5 rows (yes/no):').lower()
             while request != 'no':
-                print(df.iloc[x:x+5])
+                print(tabulate(df.iloc[np.arange(x,x+5)], headers ="keys"))
                 request=input('Would you like to see the next 5 rows (yes/no):').lower()
                 x+=5
         else:
