@@ -1,15 +1,17 @@
 ### Date created
-Include the date you created this project and README file.
+28/12/2020
 
 ### Project Title
-Replace the Project Title
+Explore US Bikeshare data
 
 ### Description
-Describe what your project is about and what it does
+To analyse the bikeshare data from three American cities and derive useful conclusions.
 
 ### Files used
-Include the files used
+washington.csv,chicago.csv,new_york_cit.csv
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+Udacity python for data science nanodegree.
+https://knowledge.udacity.com/questions/424932
+
 
