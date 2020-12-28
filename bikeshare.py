@@ -207,7 +207,7 @@ def raw_data(df):
         df = df.sort_values(by=['Start Time'])
         df['Trip Duration (in minutes)'] = round(df['Trip Duration']/60,2)
         x=5
-        
+
         if order!= 'r':
             print(tabulate(df.head(5), headers ="keys"))
             request=input('Would you like to see the next 5 rows (yes/no):').lower()
@@ -220,7 +220,7 @@ def raw_data(df):
             request=input('Would you like to see the next 5 rows (yes/no):').lower()
             reversed_df = df.iloc[::-1]
             while request != 'no':
-                print(reversed_df.iloc[x:x+5])
+                print(tabulate(reversed_df.iloc[np.arange(x,x+5)], headers ="keys"))
                 request=input('Would you like to see the next 5 rows (yes/no):').lower()
                 x+=5
 
